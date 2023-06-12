@@ -1,8 +1,59 @@
+var prevImg = "";
+var cX = 0;
+var cY = 0;
+const screens = ["lounge","kitchen","bedroom" ];
+var screen = screens[0];
+//temp hardode
+let objects = "curtain, windows, spot light, capinet,pot,candles,curshion,sofa,draw table,table lamp,desk,chair,carpet,frame picture";
+let arrayObjects = objects.replace(/, /g,",").split(",");
+
+const showPopup = (evt) => {
+  var elPopup = document.getElementById("popup");
+  elPopup.style.display = "block";
+  //console.log(cX + "px");
+  elPopup.style.left = cX + "px";
+  elPopup.style.top = cY + "px";
+  
+};
+
+//elArea.addEventListener("click", showPopup);
+
+let mousePos = { x: undefined, y: undefined };
+
+window.addEventListener('mousemove', (event) => {
+  mousePos = { x: event.clientX, y: event.clientY };
+  cX = mousePos.x;
+  cY = mousePos.y;
+  //console.log(mousePos.x,mousePos.y);
+});
+
+function showDetail(x) {
+x.children[0].style.display = "block";
+// showPopup(x); 
+}
+
+function hideDetail(x) {
+  x.children[0].style.display = "none";
+ }
+
 function getText(link) {
     	speak(link.innerHTML);
 	}
-	
-   function speak(text){
+
+function bigImg(x) {
+    //x.style.border ="thin solid red";
+    var txt = x.getAttribute('alt');
+    var wrap = document.getElementsByClassName("wrap");
+    var txt2 = "url(" + '"imgs/' + txt + '")';
+    if (prevImg == txt2) { return }
+    prevImg = txt2;
+    wrap[0].style.backgroundImage =  txt2; 
+    wrap[0].style.backgroundRepeat  = "no-repeat";
+    wrap[0].style.backgroundSize = "inherit";
+    console.log(txt2);
+  }
+
+function speak(text){
    if (text == "") {text = "this it it"};
      
       var msg = new SpeechSynthesisUtterance();
@@ -21,6 +72,11 @@ function getText(link) {
  }
 
    $(function(){
+      console.log(arrayObjects);
+      let txt = '"imgs/' + screen + "/00.jpg";
+      let txt2 = "url(" + txt + '")';
+      console.log(txt2);
+      document.body.style.backgroundImage = txt2;
       // See if this is a touch device
       if ('ontouchstart' in window)
       {

@@ -12,104 +12,86 @@
 </head>
 
 <body class="no-touch">
-
-  <div class="wrap">
+<div class="icon1"></div>
+<div class="topBar"></div>
+<div id="popup">Popup fixed</div>
+  <div class="wrap" id="bigbox">
     
     <!-- Define all of the tiles: -->
     <div class="row">   
-    <div class="box">
+    <div class="box" onmouseover="bigImg(this)" alt="">
      <div class="titleBox">
      <ul>
 		  <li><img src="imgs/bookshelf.jpg" >  <a onclick= "getText(this)">Book Shelf </a> </li> 
 		  <li><img src="imgs/framepicture.jpg" >  <a onclick= "getText(this)">Frame picture </a> </li> 
 		  <li><img src="imgs/curtainrail.jpg">  <a onclick= "getText(this)">curtain rail </a> </li> 
-		</ul>
-
-     
+		</ul>    
       </div>
     </div>
-    <div class="box">
-
+    <div class="box" onmouseover="bigImg(this)" alt="">
         <div class="titleBox">
-     
 		<ul>
 		  <li><img src="imgs/corridor.jpg" >  <a onclick= "getText(this)">Corridor</a> </li> 
 		  <li><img src="imgs/windows.jpg" >  <a onclick= "getText(this)">Glasses windows </a> </li> 
 		  <li><img src="imgs/slidingdoor.jpg" >  <a onclick= "getText(this)">Sliding door</a> </li> 
 		</ul>
-
-     
       </div>
     </div>
-    <div class="box">
-
+    <div class="box" onmouseover="bigImg(this)" alt="">
         <div class="titleBox">
-
 		<ul>
-		  <li><img src="imgs/swinglight.jpg" >  <a onclick= "getText(this)">Ceiling lamp</a> </li> 
-		  <li><img src="imgs/spotlight.jpg" >  <a onclick= "getText(this)">Spot lights</a> </li> 
-		  <li><img src="imgs/hanginglamp.jpg">  <a onclick= "getText(this)">Hanging lamp </a> </li> 
+		  <li style="color:blue">  <a onclick= "getText(this)">Ceiling lamp</a> </li> 
+		  <li style="color:red">  <a onclick= "getText(this)">Spot lights</a> </li> 
+		  <li style="color:green">  <a onclick= "getText(this)">Hanging lamp </a> </li> 
 		</ul>
 
         </div>
-
     </div>
-    <div class="box">
-
+    <div class="box" onmouseover="bigImg(this)" alt="">
         <div class="titleBox">
-
 		<ul>
-		  <li><img src="imgs/bookshelf.jpg" >  <a onclick= "getText(this)">Smoke alarm</a> </li> 
-		  <li><img src="imgs/spotlight.jpg" >  <a onclick= "getText(this)">Spot lights </a> </li> 
-		  <li><img src="imgs/framepicture.jpg" >  <a onclick= "getText(this)">Frame picture </a> </li> 
+		  <li>  <a onclick= "getText(this)">Smoke alarm</a> </li> 
+		  <li>  <a onclick= "getText(this)">Floor lamp </a> </li> 
+		  <li>  <a onclick= "getText(this)">Frame picture </a> </li> 
 		</ul>
 		</div>
         </div>
        </div>
 
     <div class="row">   
-    <div class="box">
- 
-        <div class="titleBox">
-
+	 <div class="box" onmouseover="bigImg(this)" alt="">
+			<div class="titleBox">
 		<ul>
 		  <li><img src="imgs/bookshelf.jpg" >  <a onclick= "getText(this)">Book Shelf </a> </li> 
-      <li><img src="imgs/framepicture.jpg" >  <a onclick= "getText(this)">Frame picture </a> </li> 		  
+         <li><img src="imgs/framepicture.jpg" >  <a onclick= "getText(this)">Frame picture </a> </li> 		  
 		  <li><img src="imgs/indoorplant.jpg">  <a onclick= "getText(this)">Indoor plant </a> </li> 
 		</ul>
 		</div>
 
 
     </div>
-    <div class="box">
-
-        <div class="titleBox">
-
-		<ul>
-		  <li><img src="imgs/slidingdoor.jpg" >  <a onclick= "getText(this)">Sliding door</a> </li> 
-		  <li><img src="imgs/cushion.jpg" >  <a onclick= "getText(this)">Cushion </a> </li> 
-		  <li><img src="imgs/curtain.jpg">  <a onclick= "getText(this)">Curtain </a> </li> 
+	<div class="box" onmouseover="bigImg(this)" onmouseleave = "hideDetail(this)" onclick="showDetail(this)" alt="lounge/06.png">
+		<div class="titleBox">
+	    <ul>
+			<li style="background-color:blue">  <a onclick= "getText(this)">Chairs</a> </li> 
+	<!--		<li style="background-color:red">  <a onclick= "getText(this)">Cushions - Resting pillows on sofa</a> </li>  -->
+			<li style="background-color:green">  <a onclick= "getText(this)">Desk - table used for the office work </a> </li> 
 		</ul>
 		</div>
-
  
     </div>
-    <div class="box">
-
-        <div class="titleBox">
-
-		<ul>
-		  <li><img src="imgs/hanginglamp.jpg">  <a onclick= "getText(this)">Hanging lamp </a> </li> 
-		  <li><img src="imgs/chair.jpg" >  <a onclick= "getText(this)">Sofa lounge suit</a> </li> 
-		  <li><img src="imgs/coffeetable.jpg">  <a onclick= "getText(this)">Coffee table </a> </li> 
+    <div class="box" onmouseover="bigImg(this)" onmouseleave = "hideDetail(this)" onclick="showDetail(this)" alt="lounge/07.png">
+		<div class="titleBox">
+	    <ul>
+			<li style="background-color:blue">  <a onclick= "getText(this)">Table lamp</a> </li> 
+			<li style="background-color:red">  <a onclick= "getText(this)">Cushions - Resting pillows on sofa</a> </li> 
+			<li style="background-color:green">  <a onclick= "getText(this)">drawer table </a> </li> 
 		</ul>
 		</div>
 
    
     </div>
-    
-    <div class="box">
-
+    <div class="box" onmouseover="bigImg(this)" onmouseleave = "hideDetail(this)" onclick="showDetail(this)" alt="lounge/08.png">
         <div class="titleBox">
 
 		<ul>
@@ -122,10 +104,8 @@
   </div>
 
   <div class="row">   
-    <div class="box">
- 
-        <div class="titleBox">
-
+    <div class="box" onmouseover="bigImg(this)" alt="">
+		<div class="titleBox">
 		<ul>
 		  <li><img src="imgs/bookshelf.jpg" >  <a onclick= "getText(this)">Book Shelf </a> </li> 
 		  <li><img src="imgs/tableLamp.jpg" >  <a onclick= "getText(this)">Frame picture </a> </li> 
@@ -135,10 +115,8 @@
 
 
     </div>
-    <div class="box">
-
-        <div class="titleBox">
-
+	<div class="box" onmouseover="bigImg(this)" alt="">
+		<div class="titleBox">
 		<ul>
 		  	  <li><img src="imgs/slidingdoor.jpg" >  <a onclick= "getText(this)">Sliding door</a> </li> 
 		  <li><img src="imgs/cushion.jpg" >  <a onclick= "getText(this)">Cushion </a> </li> 
@@ -148,8 +126,7 @@
 
  
     </div>
-    <div class="box">
-
+	<div class="box" onmouseover="bigImg(this)" alt="">
         <div class="titleBox">
 
 		<ul>
@@ -162,8 +139,7 @@
    
     </div>
     
-    <div class="box">
-
+    <div class="box" onmouseover="bigImg(this)" alt="">
         <div class="titleBox">
 
 		<ul>
