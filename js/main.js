@@ -60,7 +60,7 @@ function speak(text){
       var voices = window.speechSynthesis.getVoices();
       msg.voice = voices[0]; // default
       msg.rate = 1; // 0.1- 10
-      msg.pitch = 0; // 0-2
+      msg.pitch = 1; // 0-2
       msg.text = text;
       msg.volume = 1; // 0-1
       msg.lang = 'en';
