@@ -60,7 +60,7 @@ function speak(text){
       var voices = window.speechSynthesis.getVoices();
       msg.voice = voices[0]; // default
       msg.rate = 1; // 0.1- 10
-      msg.pitch = 2; // 0-2
+      msg.pitch = 0; // 0-2
       msg.text = text;
       msg.volume = 1; // 0-1
       msg.lang = 'en';
@@ -70,13 +70,29 @@ function speak(text){
       speechSynthesis.speak(msg);
     
  }
+ var isIOS = (function () {
+  var iosQuirkPresent = function () {
+      var audio = new Audio();
+
+      audio.volume = 0.5;
+      return audio.volume === 1;   // volume cannot be changed from "1" on iOS 12 and below
+  };
+
+  var isIOS = /iPad|iPhone|iPod/.test(navigator.userAgent);
+  var isAppleDevice = navigator.userAgent.includes('Macintosh');
+  var isTouchScreen = navigator.maxTouchPoints >= 1;   // true for iOS 13 (and hopefully beyond)
+
+  return isIOS || (isAppleDevice && (isTouchScreen || iosQuirkPresent()));
+})();
 
    $(function(){
+
       console.log(arrayObjects);
       let txt = '"imgs/' + screen + "/00.jpg";
       let txt2 = "url(" + txt + '")';
       console.log(txt2);
       document.body.style.backgroundImage = txt2;
+
       // See if this is a touch device
       if ('ontouchstart' in window)
       {
