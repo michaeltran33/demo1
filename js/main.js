@@ -50,7 +50,7 @@ function bigImg(x) {
     wrap[0].style.backgroundImage =  txt2; 
     wrap[0].style.backgroundRepeat  = "no-repeat";
     wrap[0].style.backgroundSize = "inherit";
-    console.log(txt2);
+//  console.log(txt2);
   }
 
 function speak(text){
