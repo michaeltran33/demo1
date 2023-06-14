@@ -51,7 +51,7 @@
      // background-image: url("../imgs/kitchen.jpg");
     }
     .box {
-    //  border: thin solid red;
+//      border: 1px solid greenyellow;
       float: left;
       height: 100%;
       position: relative;
