@@ -66,8 +66,9 @@
     }
 
   .box:hover{
+    cursor: pointer;
     .titleBox {
-      margin-bottom: 0;
+      //margin-bottom: 0;
       //display:block;
   }
   }
