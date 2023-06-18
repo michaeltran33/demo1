@@ -3,142 +3,81 @@
 <html>
 <head>
   <meta http-equiv="content-type" content="text/html; charset=UTF-8">
-  <!-- Enable responsive view on mobile devices -->
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+ 	<link rel="stylesheet" href="css/sass-compiled.css" /> 
+	<!-- Modrnizr Lib -->
+	<script src="libs/modernizr.js" type="text/javascript"></script>
+	<!-- Viewport -->
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
   <script type="text/javascript" src="https://code.jquery.com/jquery-1.8.3.js"></script>
   <script type="text/javascript" src="js/main.js"> </script>
   <title>Spoken Picture Dictionary</title>
   <link href="css/main.css" rel="stylesheet" type="text/css">
+<style type="text/css">
+ .icon1 {
+      position: fixed;
+      z-index:10;
+      top:2px;
+      left:2px;
+      height:40px;
+      width :40px;
+      display: none;
+      //background-color: red;
+      background-image: url("imgs/icons/menu40.png");
+      background-repeat: no-repeat;
+      filter: invert(1);  // only on dark background
+      
+    }
+   
+ #bigbox {
+  position:absolute;
+  top:0;
+  width:100%;
+  height:100%;
+  left:0;
+  background-color: grey;
+ }  
+ .wrapper{
+  margin:40px auto;
+ }
+</style>  
 </head>
 
 <body class="no-touch">
-<div class="icon1"></div>
-<div class="topBar"></div>
-<div id="popup">Popup fixed</div>
+<div class="icon1" onclick="loadMenu()"></div>
+
+<div id="popup"></div>
   <div class="wrap" id="bigbox">
     
-    <!-- Define all of the tiles: -->
-    <div class="row">   
-		<div class="box" onmouseover="bigImg(this)" onmouseleave = "hideDetail(this)" onclick="showDetail(this)" alt="lounge/01.png">
-			<div class="titleBox">
-			<ul>
-				<li style="background-color:blue">  <a onclick= "getText(this)">Curtains</a> </li> 
-				<li style="background-color:red">  <a onclick= "getText(this)">Ceiling spot lights</a> </li> 
-				<li style="background-color:green">  <a onclick= "getText(this)">Window frames</a> </li> 
-			</ul>
-			</div>
-		</div>>
-	<div class="box" onmouseover="bigImg(this)" onmouseleave = "hideDetail(this)" onclick="showDetail(this)" alt="lounge/02.png">
-		<div class="titleBox">
-	    <ul>
-			<li style="background-color:blue">  <a onclick= "getText(this)">Glass</a> </li> 
-			<li style="background-color:green">  <a onclick= "getText(this)">Windows</a> </li>  
-			<li style="background-color:red">  <a onclick= "getText(this)">Ceiling spot lights</a> </li> 
-		</ul>
-		</div>
-    </div>
-
-    <div class="box" onmouseover="bigImg(this)" onmouseleave = "hideDetail(this)" onclick="showDetail(this)" alt="lounge/03.png">
-		<div class="titleBox">
-	    <ul>
-			<li style="background-color:blue">  <a onclick= "getText(this)">Ceiling</a> </li> 
-			<li style="background-color:green">  <a onclick= "getText(this)">Paints</a> </li>  
-			
-		</ul>
-		</div>
-    </div>
-	<div class="box" onmouseover="bigImg(this)" onmouseleave = "hideDetail(this)" onclick="showDetail(this)" alt="lounge/04.png">
-		<div class="titleBox">
-	    <ul>
-			<li style="background-color:blue">  <a onclick= "getText(this)">Curtains</a> </li> 
-			<li style="background-color:green">  <a onclick= "getText(this)">Cupboard</a> </li>  
-			<li style="background-color:red">  <a onclick= "getText(this)">Ceiling spot lights</a> </li> 
-		</ul>
-		</div>
-    </div>
-       </div>
-
-    <div class="row">   
-		<div class="box" onmouseover="bigImg(this)" onmouseleave = "hideDetail(this)" onclick="showDetail(this)" alt="lounge/05.png">
-			<div class="titleBox">
-			<ul>
-				<li style="background-color:blue">  <a onclick= "getText(this)">Cups candle</a><a style = "font-size:13px">- Candle in a glass</a> </li> 
-				<li style="background-color:green">  <a onclick= "getText(this)">Flowers</a> </li>  
-				<li style="background-color:red">  <a onclick= "getText(this)">Cabinet</a> </li> 
-			</ul>
-			</div>
-		</div>
-	<div class="box" onmouseover="bigImg(this)" onmouseleave = "hideDetail(this)" onclick="showDetail(this)" alt="lounge/06.png">
-		<div class="titleBox">
-	    <ul>
-			<li style="background-color:blue">  <a onclick= "getText(this)">Chairs</a> </li> 
-			<li style="background-color:green">  <a onclick= "getText(this)">Flowers</a> </li>  
-			<li style="background-color:red">  <a onclick= "getText(this)">Desk - table used for the office work </a> </li> 
-		</ul>
-		</div>
- 
-    </div>
-    <div class="box" onmouseover="bigImg(this)" onmouseleave = "hideDetail(this)" onclick="showDetail(this)" alt="lounge/07.png">
-		<div class="titleBox">
-	    <ul>
-			<li style="background-color:blue">  <a onclick= "getText(this)">Table lamp</a> </li> 
-			<li style="background-color:red">  <a onclick= "getText(this)">Cushions - Resting pillows on sofa</a> </li> 
-			<li style="background-color:green">  <a onclick= "getText(this)">drawer table </a> </li> 
-		</ul>
-		</div>   
-    </div>
-    <div class="box" onmouseover="bigImg(this)" onmouseleave = "hideDetail(this)" onclick="showDetail(this)" alt="lounge/08.png">
-        <div class="titleBox">
-			<ul>
-				<li style="background-color:blue">  <a onclick= "getText(this)">Sofa suit</a> </li> 
-				<li style="background-color:red">  <a onclick= "getText(this)">Cushions - Resting pillows on sofa</a> </li> 
-				<li style="background-color:green">  <a onclick= "getText(this)">Cupboard</a> </li> 
-			</ul>
-		</div>
-    </div>
   </div>
+    
+  
+<script type="text/javascript">
 
-  <div class="row">   
-	<div class="box" onmouseover="bigImg(this)" onmouseleave = "hideDetail(this)" onclick="showDetail(this)" alt="lounge/09.png">
-        <div class="titleBox">
-			<ul>
-				<li style="background-color:blue">  <a onclick= "getText(this)">Sofa suit</a> </li> 
-				<li style="background-color:red">  <a onclick= "getText(this)">Cabinet</a> </li> 
-				
-			</ul>
-		</div>
-    </div>
-	<div class="box" onmouseover="bigImg(this)" onmouseleave = "hideDetail(this)" onclick="showDetail(this)" alt="lounge/10.png">
-        <div class="titleBox">
-			<ul>
-				<li style="background-color:blue">  <a onclick= "getText(this)">Sofa suit</a> </li> 
-				<li style="background-color:red">  <a onclick= "getText(this)">Carpet</a> </li> 
-				
-			</ul>
-		</div>
-    </div>
-	<div class="box" onmouseover="bigImg(this)" onmouseleave = "hideDetail(this)" onclick="showDetail(this)" alt="lounge/11.png">
-        <div class="titleBox">
-			<ul>
-				
-				<li style="background-color:red">  <a onclick= "getText(this)">Carpet</a> </li> 
-				
-			</ul>
-		</div>
-    </div>
-    <div class="box" onmouseover="bigImg(this)" onmouseleave = "hideDetail(this)" onclick="showDetail(this)" alt="lounge/12.png">
-        <div class="titleBox">
-			<ul>
-				<li style="background-color:blue">  <a onclick= "getText(this)">floor tile</a> </li> 
-				<li style="background-color:green">  <a onclick= "getText(this)">Floor</a> </li> 
-			</ul>
-		</div>
-    </div>
-  </div>
-  </div>
+  function loadMe(x) {
+    var txt = x.getAttribute('alt');
+    var icon = document.getElementsByClassName("icon1");
+    icon[0].style.display = "block";
+    screen = txt; // load the screen
+    txt = '"imgs/' + screen + "/00.jpg";
+    let txt2 = "url(" + txt + '")';
   
-  <!-- /#wrap -->
-  
-  
+    $("#bigbox").html("");
+    $("#bigbox").load("dictionary.html #bigbox2")
+    document.body.style.backgroundImage = txt2;
+    console.log(txt2);
+  }
+function loadMenu() {
+  var icon = document.getElementsByClassName("icon1");
+    icon[0].style.display = "none";
+  document.body.style.backgroundImage = "none";
+  document.getElementById("bigbox").style.background= "none";
+   $("#bigbox").html("");
+   $("#bigbox").load("menu.html #wrapper");
+}
+
+  $(document).ready(function() {
+    loadMenu();
+  })
+  </script>
 </body>
 </html>

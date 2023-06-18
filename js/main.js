@@ -90,8 +90,8 @@ function speak(text){
       console.log(arrayObjects);
       let txt = '"imgs/' + screen + "/00.jpg";
       let txt2 = "url(" + txt + '")';
-      console.log(txt2);
-      document.body.style.backgroundImage = txt2;
+    //  console.log(txt2);
+    //  document.body.style.backgroundImage = txt2;
 
       // See if this is a touch device
       if ('ontouchstart' in window)
