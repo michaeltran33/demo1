@@ -28,6 +28,9 @@
       
     }
    
+.icon1:hover{
+    cursor:pointer;
+  }
  #bigbox {
   position:absolute;
   top:0;
@@ -35,32 +38,35 @@
   height:100%;
   left:0;
   background-color: grey;
+  overflow:auto;
  }  
- .wrapper{
-  margin:40px auto;
+ .wrapper {
+ // margin:80px auto;
+ }
+ a {
+color: white;
  }
 </style>  
 </head>
 
 <body class="no-touch">
-<div class="icon1" onclick="loadMenu()"></div>
 
+<div class="icon1" onclick="loadMenu()"></div>
 <div id="popup"></div>
-  <div class="wrap" id="bigbox">
-    
-  </div>
+<div class="wrap" id="bigbox"> </div>
     
   
 <script type="text/javascript">
 
-  function loadMe(x) {
-    var txt = x.getAttribute('alt');
+function loadMe(x) {
+    var txt = x.getAttribute('src');
+    screen = x.getAttribute('alt');
     var icon = document.getElementsByClassName("icon1");
     icon[0].style.display = "block";
-    screen = txt; // load the screen
-    txt = '"imgs/' + screen + "/00.jpg";
-    let txt2 = "url(" + txt + '")';
-  
+    //screen = txt; // load the screen
+    //txt = '"imgs/' + screen + "/00.jpg";
+    let txt2 = 'url("' + txt + '")';
+    
     $("#bigbox").html("");
     $("#bigbox").load("dictionary.html #bigbox2")
     document.body.style.backgroundImage = txt2;
@@ -70,9 +76,11 @@ function loadMenu() {
   var icon = document.getElementsByClassName("icon1");
     icon[0].style.display = "none";
   document.body.style.backgroundImage = "none";
-  document.getElementById("bigbox").style.background= "none";
+  document.getElementById("bigbox").style.background = "none";
+ // document.getElementById("bigbox").style.backgroundColor ="grey";
    $("#bigbox").html("");
-   $("#bigbox").load("menu.html #wrapper");
+   //$("#bigbox").load("menu.html #wrapper");
+   $("#bigbox").load("menu.html #container");
 }
 
   $(document).ready(function() {
